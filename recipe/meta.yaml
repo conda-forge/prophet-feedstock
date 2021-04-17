@@ -10,15 +10,14 @@ source:
   sha256: 3e682e8ea6e1ee26a92cf289f207d539f30e44879126c128ff8f4e360eb25a8b
 
 build:
-  number: 0
-  noarch: python
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
   binary_has_prefix_files:
     - {{ SP_DIR|replace("\\", "/") }}/stan_model/prophet_model.pkl
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
     - setuptools
     - pandas >=1.0.4
@@ -29,7 +28,7 @@ requirements:
     - python-dateutil
     - tqdm
   run:
-    - python >=3.6
+    - python
     - setuptools
     - matplotlib-base
     - pandas >=1.0.4
