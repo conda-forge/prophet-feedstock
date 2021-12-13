@@ -45,7 +45,7 @@ requirements:
     - python
     - cython >=0.22
     - cmdstanpy ==0.9.77
-    - cmdstan ==2.26,1
+    - cmdstan ==2.26.1
     - numpy >=1.15.4
     - pandas >=1.0.4
     - matplotlib-base >=2.0.0
