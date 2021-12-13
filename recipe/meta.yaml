@@ -12,6 +12,9 @@ source:
 build:
   number: 6
   skip: true  # [win and py<37]
+  script_env:
+    - STAN_BACKEND=CMDSTANPY
+  script: "{{ PYTHON }} -m pip install . -vv"
   binary_has_prefix_files:
     - {{ SP_DIR|replace("\\", "/") }}/stan_model/prophet_model.bin
 
