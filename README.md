@@ -203,6 +203,7 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
+* [@WardBrian](https://github.com/WardBrian/)
 * [@bletham](https://github.com/bletham/)
 * [@maresb](https://github.com/maresb/)
 
