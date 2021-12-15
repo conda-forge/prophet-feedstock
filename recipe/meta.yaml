@@ -14,9 +14,13 @@ build:
   skip: true  # [win and py<37]
   script_env:
     - STAN_BACKEND=CMDSTANPY
+    - PRECOMPILED_HEADERS=false
   script: "{{ PYTHON }} -m pip install . -vv"
   binary_has_prefix_files:
     - {{ SP_DIR|replace("\\", "/") }}/stan_model/prophet_model.bin
+  ignore_prefix_files:
+    - bin/cmdstan/src/stan/model/model_header.hpp.gch
+    - bin/cmdstan/src/stan/model/main.d
 
 requirements:
   host:
