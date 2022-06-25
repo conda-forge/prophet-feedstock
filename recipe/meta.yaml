@@ -1,5 +1,5 @@
 {% set name = "prophet" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3e682e8ea6e1ee26a92cf289f207d539f30e44879126c128ff8f4e360eb25a8b
+  sha256: 963b117d56fe0dabc247b5b36cdb20d7ce7ac6899e77ec4037040b773a713ffe
 
 build:
-  number: 5
+  number: 0
   skip: true  # [win and py<37]
-  script: "{{ PYTHON }} -m pip install . -vv"
+  script: {{ PYTHON }} -m pip install . -vv
   binary_has_prefix_files:
     - {{ SP_DIR|replace("\\", "/") }}/stan_model/prophet_model.pkl
 
