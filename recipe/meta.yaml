@@ -20,6 +20,7 @@ build:
   ignore_prefix_files:
     - bin/cmdstan/src/stan/model/model_header.hpp.gch
     - bin/cmdstan/src/stan/model/main.d
+    - bin/cmdstan/src/cmdstan/main.d
 
 requirements:
   host:
