@@ -11,44 +11,38 @@ source:
 
 build:
   number: 0
-  skip: true  # [win and py<37]
+  script_env:
+    - PROPHET_REPACKAGE_CMDSTAN=false
+    - PRECOMPILED_HEADERS=false
   script: {{ PYTHON }} -m pip install . -vv
   binary_has_prefix_files:
-    - {{ SP_DIR|replace("\\", "/") }}/stan_model/prophet_model.pkl
+    - {{ SP_DIR|replace("\\", "/") }}/stan_model/prophet_model.bin
+  ignore_prefix_files:
+    - bin/cmdstan/src/stan/model/model_header.hpp.gch
+    - bin/cmdstan/src/stan/model/main.d
 
 requirements:
   host:
     - python
     - pip
-    # Explanation:
-    #
-    # setup.py imports fbprophet.models.StanBackendEnum, triggering
-    # fbprophet/__init__.py and thus making the runtime dependencies
-    # also build-time dependencies.
-    #
-    # These requirements are copied from python/requirements.txt
     - cython >=0.22
-    - cmdstanpy ==0.9.68
-    - pystan ~=2.19.1.1
-    - numpy >=1.15.4
-    - pandas >=1.0.4
-    - matplotlib-base >=2.0.0
-    - LunarCalendar >=0.0.9
-    - convertdate >=2.1.2
-    - holidays >=0.10.2
-    - setuptools-git >=1.2
-    - python-dateutil >=2.8.0
-    - tqdm >=4.36.1
+    - cmdstanpy >=1.0.1
+    - cmdstan ==2.29.2
+    - setuptools >=42
+    - wheel >=0.37.0
+
   run:
     - python
     - cython >=0.22
-    - cmdstanpy ==0.9.68
-    - pystan ~=2.19.1.1
+    - cmdstanpy >=1.0.1
+    - cmdstan ==2.29.2
     - pandas >=1.0.4
     - matplotlib-base >=2.0.0
     - LunarCalendar >=0.0.9
     - convertdate >=2.1.2
-    - holidays >=0.10.2
+    - holidays >=0.13
+    - setuptools >=42
+    - wheel >=0.37.0
     - setuptools-git >=1.2
     - python-dateutil >=2.8.0
     - tqdm >=4.36.1
