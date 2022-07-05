@@ -31,6 +31,8 @@ requirements:
     # Get the correct numpy version as an indirect dependency via cmdstanpy
     - cmdstanpy                              # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
+    - {{ compiler('c') }}                    # [build_platform != target_platform]
+    - {{ compiler('cxx') }}                  # [build_platform != target_platform]
   host:
     - python
     - pip
