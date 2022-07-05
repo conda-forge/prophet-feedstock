@@ -10,7 +10,7 @@ source:
   sha256: 963b117d56fe0dabc247b5b36cdb20d7ce7ac6899e77ec4037040b773a713ffe
 
 build:
-  number: 0
+  number: 1
   script_env:
     - PROPHET_REPACKAGE_CMDSTAN=false
     - PRECOMPILED_HEADERS=false
