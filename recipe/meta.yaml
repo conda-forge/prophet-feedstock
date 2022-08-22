@@ -47,7 +47,7 @@ requirements:
     - setuptools-git >=1.2
     - python-dateutil >=2.8.0
     - tqdm >=4.36.1
-    - numpy>=1.15.4
+    - numpy >=1.15.4
 
 test:
   imports:
