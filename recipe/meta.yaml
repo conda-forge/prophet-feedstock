@@ -26,22 +26,20 @@ requirements:
   host:
     - python
     - pip
-    - cython >=0.22
-    - cmdstanpy >=1.0.1
+    - cmdstanpy >=1.0.4
     - cmdstan ==2.29.2
     - setuptools >=42
     - wheel >=0.37.0
 
   run:
     - python
-    - cython >=0.22
-    - cmdstanpy >=1.0.1
+    - cmdstanpy >=1.0.4
     - cmdstan ==2.29.2
     - pandas >=1.0.4
     - matplotlib-base >=2.0.0
     - LunarCalendar >=0.0.9
     - convertdate >=2.1.2
-    - holidays >=0.13
+    - holidays >=0.14.2
     - setuptools >=42
     - wheel >=0.37.0
     - setuptools-git >=1.2
