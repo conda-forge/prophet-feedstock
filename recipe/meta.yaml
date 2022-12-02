@@ -33,6 +33,7 @@ requirements:
     - cmdstan ==2.29.2
     - setuptools >=42
     - wheel >=0.37.0
+    - tbb-devel
 
   run:
     - python
