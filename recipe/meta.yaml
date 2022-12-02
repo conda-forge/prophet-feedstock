@@ -24,6 +24,8 @@ build:
     - bin/cmdstan/src/cmdstan/main.d
 
 requirements:
+  build:
+    - {{ compiler('cxx') }}
   host:
     - python
     - pip
