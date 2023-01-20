@@ -1,5 +1,5 @@
 {% set name = "prophet" %}
-{% set version = "1.1.1" %}
+{% set version = "1.1.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: fbef61a868c6289e12bcee38fa4b68977ba1270466084605135dbcc3d3c5ab7a
+  sha256: 3cfb7665962e983b05367f65f37692d9c8569a86335f3f163925ec89a128bfab
 
 build:
   skip: true  # [python_impl == 'pypy']
-  number: 3
+  number: 0
   script_env:
     - PROPHET_REPACKAGE_CMDSTAN=false
     - PRECOMPILED_HEADERS=false
