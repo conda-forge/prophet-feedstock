@@ -1,11 +1,11 @@
-About prophet
-=============
+About prophet-feedstock
+=======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/prophet-feedstock/blob/main/LICENSE.txt)
 
 Home: https://facebook.github.io/prophet/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/prophet-feedstock/blob/main/LICENSE.txt)
 
 Summary: Automatic Forecasting Procedure
 
