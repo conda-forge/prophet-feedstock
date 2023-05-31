@@ -30,15 +30,15 @@ requirements:
     - python
     - pip
     - cmdstanpy >=1.0.4
-    - cmdstan ==2.29.2
-    - setuptools >=42
-    - wheel >=0.37.0
+    - cmdstan ==2.31.0
+    - setuptools >=64
+    - wheel
     - tbb-devel
 
   run:
     - python
     # Pin the cmdstan version
-    - cmdstan ==2.29.2
+    - cmdstan ==2.31.0
     # List below comes from Grayskull:
     - cmdstanpy >=1.0.4
     - numpy >=1.15.4
@@ -46,9 +46,10 @@ requirements:
     - pandas >=1.0.4
     - lunarcalendar >=0.0.9
     - convertdate >=2.1.2
-    - holidays >=0.14.2
+    - holidays >=0.25
     - python-dateutil >=2.8.0
     - tqdm >=4.36.1
+    - importlib_resources
 
 test:
   imports:
