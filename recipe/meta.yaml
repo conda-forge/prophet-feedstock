@@ -38,7 +38,7 @@ requirements:
   run:
     - python
     # Pin the cmdstan version
-    - cmdstan ==2.29.2
+    - cmdstan ==2.31.0
     # List below comes from Grayskull:
     - cmdstanpy >=1.0.4
     - numpy >=1.15.4
