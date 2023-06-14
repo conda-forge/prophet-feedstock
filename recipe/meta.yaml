@@ -8,6 +8,8 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7f91e4ba322786e9512158783800b6eafb002200a7b3e9eadc13d7ff4d6e0634
+  patches:
+    - setup-make-folder.patch
 
 build:
   skip: true  # [python_impl == 'pypy']
