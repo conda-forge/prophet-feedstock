@@ -1,5 +1,5 @@
 {% set name = "prophet" %}
-{% set version = "1.1.2" %}
+{% set version = "1.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3cfb7665962e983b05367f65f37692d9c8569a86335f3f163925ec89a128bfab
+  sha256: 7f91e4ba322786e9512158783800b6eafb002200a7b3e9eadc13d7ff4d6e0634
+  patches:
+    - setup-make-folder.patch
 
 build:
   skip: true  # [python_impl == 'pypy']
@@ -24,31 +26,31 @@ build:
     - bin/cmdstan/src/cmdstan/main.d
 
 requirements:
-  build:
-    - {{ compiler('cxx') }}  # [unix]
+
   host:
     - python
     - pip
     - cmdstanpy >=1.0.4
-    - cmdstan ==2.29.2
+    - cmdstan ==2.32.1
     - setuptools >=42
     - wheel >=0.37.0
+    - importlib_resources
     - tbb-devel
 
   run:
     - python
     # Pin the cmdstan version
-    - cmdstan ==2.29.2
-    # List below comes from Grayskull:
+    - cmdstan ==2.32.1
     - cmdstanpy >=1.0.4
     - numpy >=1.15.4
     - matplotlib-base >=2.0.0
     - pandas >=1.0.4
     - lunarcalendar >=0.0.9
     - convertdate >=2.1.2
-    - holidays >=0.14.2
+    - holidays >=0.25.0
     - python-dateutil >=2.8.0
     - tqdm >=4.36.1
+    - importlib_resources
 
 test:
   imports:
