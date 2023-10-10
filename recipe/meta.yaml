@@ -8,8 +8,6 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 80973c0b8a22d835bfa9d6665a78ebc63115135eaef0f73b46ee14e9bad3ca1a
-  patches:
-    - setup-make-folder.patch
 
 build:
   skip: true  # [python_impl == 'pypy']
@@ -31,7 +29,7 @@ requirements:
     - python
     - pip
     - cmdstanpy >=1.0.4
-    - cmdstan ==2.32.1
+    - cmdstan ==2.33.1
     - setuptools >=42
     - wheel >=0.37.0
     - importlib_resources
@@ -40,7 +38,7 @@ requirements:
   run:
     - python
     # Pin the cmdstan version
-    - cmdstan ==2.32.1
+    - cmdstan ==2.33.1
     - cmdstanpy >=1.0.4
     - numpy >=1.15.4
     - matplotlib-base >=2.0.0
