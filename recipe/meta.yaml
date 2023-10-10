@@ -1,5 +1,5 @@
 {% set name = "prophet" %}
-{% set version = "1.1.4" %}
+{% set version = "1.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7f91e4ba322786e9512158783800b6eafb002200a7b3e9eadc13d7ff4d6e0634
+  sha256: 80973c0b8a22d835bfa9d6665a78ebc63115135eaef0f73b46ee14e9bad3ca1a
   patches:
     - setup-make-folder.patch
 
