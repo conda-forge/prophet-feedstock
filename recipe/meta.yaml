@@ -28,7 +28,7 @@ requirements:
   build:
     - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - python                                # [build_platform != target_platform]
-    - numpy                                 # [build_platform != target_platform]
+    - numpy ~=1.0                           # [build_platform != target_platform]
     - tbb-devel                             # [build_platform != target_platform]
     - {{ compiler('c') }}                   # [build_platform != target_platform]
     - {{ compiler('cxx') }}                 # [build_platform != target_platform]
