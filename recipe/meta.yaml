@@ -34,6 +34,7 @@ requirements:
     - {{ compiler('cxx') }}                 # [build_platform != target_platform]
     - cmdstan ==2.33.1                      # [build_platform != target_platform]
     - cmdstanpy >=1.0.4                     # [build_platform != target_platform]
+    - {{ stdlib("c") }}
     
   host:
     - python
