@@ -50,7 +50,7 @@ requirements:
     # Pin the cmdstan version
     - cmdstan ==2.33.1
     - cmdstanpy >=1.0.4
-    - numpy >=1.15.4
+    - numpy ~=1.15
     - matplotlib-base >=2.0.0
     - pandas >=1.0.4
     - lunarcalendar >=0.0.9
