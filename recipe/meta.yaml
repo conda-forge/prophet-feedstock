@@ -26,14 +26,6 @@ build:
 requirements:
 
   build:
-    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
-    - python                                # [build_platform != target_platform]
-    - numpy ~=1.0                           # [build_platform != target_platform]
-    - tbb-devel                             # [build_platform != target_platform]
-    - {{ compiler('c') }}                   # [build_platform != target_platform]
-    - {{ compiler('cxx') }}                 # [build_platform != target_platform]
-    - cmdstan ==2.33.1                      # [build_platform != target_platform]
-    - cmdstanpy >=1.0.4                     # [build_platform != target_platform]
     - {{ stdlib("c") }}
     
   host:
@@ -45,6 +37,7 @@ requirements:
     - wheel >=0.37.0
     - importlib_resources
     - tbb-devel
+    - numpy ~=1.0
 
   run:
     - python
