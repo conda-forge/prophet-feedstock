@@ -35,7 +35,7 @@ requirements:
     - python
     - pip
     - cmdstanpy >=1.0.4
-    - cmdstan ==2.33.1
+    - cmdstan ==2.25.0
     - setuptools >=42
     - wheel >=0.37.0
     - importlib_resources
@@ -44,7 +44,7 @@ requirements:
   run:
     - python
     # Pin the cmdstan version
-    - cmdstan ==2.33.1
+    - cmdstan ==2.35.0
     - cmdstanpy >=1.0.4
     - numpy >=1.15.4
     - matplotlib-base >=2.0.0
