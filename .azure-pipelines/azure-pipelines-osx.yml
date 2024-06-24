@@ -5,35 +5,59 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-11
+    vmImage: macOS-12
   strategy:
     matrix:
-      osx_64_python3.10.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.10.____cpythonpython_implcpython
+      osx_64_numpy1.22python3.10.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.22python3.10.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.10.____cpythonpython_implcpython
-      osx_64_python3.11.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.11.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.22python3.10.____cpyt_hec22e5432d
+      osx_64_numpy1.22python3.8.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.22python3.8.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.11.____cpythonpython_implcpython
-      osx_64_python3.12.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.12.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.22python3.8.____cpyth_h783ef922b3
+      osx_64_numpy1.22python3.9.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.22python3.9.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.12.____cpythonpython_implcpython
-      osx_64_python3.8.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.8.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.22python3.9.____cpyth_h145340936a
+      osx_64_numpy1.23python3.11.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.23python3.11.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.8.____cpythonpython_implcpython
-      osx_64_python3.9.____cpythonpython_implcpython:
-        CONFIG: osx_64_python3.9.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.23python3.11.____cpyt_haf16f790ab
+      osx_64_numpy1.26python3.12.____cpythonpython_implcpython:
+        CONFIG: osx_64_numpy1.26python3.12.____cpythonpython_implcpython
         UPLOAD_PACKAGES: 'True'
-        SHORT_CONFIG: osx_64_python3.9.____cpythonpython_implcpython
+        SHORT_CONFIG: osx_64_numpy1.26python3.12.____cpyt_hd12ce65522
+      osx_arm64_numpy1.22python3.10.____cpython:
+        CONFIG: osx_arm64_numpy1.22python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_numpy1.22python3.10.____cpython
+      osx_arm64_numpy1.22python3.8.____cpython:
+        CONFIG: osx_arm64_numpy1.22python3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_numpy1.22python3.8.____cpython
+      osx_arm64_numpy1.22python3.9.____cpython:
+        CONFIG: osx_arm64_numpy1.22python3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_numpy1.22python3.9.____cpython
+      osx_arm64_numpy1.23python3.11.____cpython:
+        CONFIG: osx_arm64_numpy1.23python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_numpy1.23python3.11.____cpython
+      osx_arm64_numpy1.26python3.12.____cpython:
+        CONFIG: osx_arm64_numpy1.26python3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        SHORT_CONFIG: osx_arm64_numpy1.26python3.12.____cpython
   timeoutInMinutes: 360
+  variables: {}
 
   steps:
   # TODO: Fast finish on azure pipelines?
   - script: |
       export CI=azure
+      export flow_run_id=azure_$(Build.BuildNumber).$(System.JobAttempt)
+      export remote_url=$(Build.Repository.Uri)
+      export sha=$(Build.SourceVersion)
       export OSX_FORCE_SDK_DOWNLOAD="1"
       export GIT_BRANCH=$BUILD_SOURCEBRANCHNAME
       export FEEDSTOCK_NAME=$(basename ${BUILD_REPOSITORY_NAME})
