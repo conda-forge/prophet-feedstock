@@ -26,6 +26,7 @@ build:
 requirements:
   build:
     - cmdstan ==2.35.0
+    - numpy >=1.15.4,<2
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
