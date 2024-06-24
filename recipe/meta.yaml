@@ -26,13 +26,14 @@ build:
 requirements:
   build:
     - cmdstan ==2.35.0
-    - numpy >=1.15.4,<2
+    - numpy                                  # [build_platform != target_platform]
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
   host:
     - python
     - pip
+    - numpy
     - cmdstanpy >=1.0.4
     - cmdstan ==2.35.0
     - setuptools >=42
