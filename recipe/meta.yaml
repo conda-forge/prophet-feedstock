@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [python_impl == 'pypy']
-  number: 1
+  number: 2
   script_env:
     - PROPHET_REPACKAGE_CMDSTAN=false
     - PRECOMPILED_HEADERS=false
