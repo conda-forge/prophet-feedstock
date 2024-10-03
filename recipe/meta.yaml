@@ -43,10 +43,8 @@ requirements:
     - numpy >=1.15.4
     - matplotlib-base >=2.0.0
     - pandas >=1.0.4
-    - lunarcalendar >=0.0.9
     - convertdate >=2.1.2
-    - holidays >=0.25.0
-    - python-dateutil >=2.8.0
+    - holidays >=0.25.0,<1
     - tqdm >=4.36.1
     - importlib_resources
 
