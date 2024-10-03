@@ -1,5 +1,5 @@
 {% set name = "prophet" %}
-{% set version = "1.1.5" %}
+{% set version = "1.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 80973c0b8a22d835bfa9d6665a78ebc63115135eaef0f73b46ee14e9bad3ca1a
+  sha256: 92238aa584da69abe5c43e9426e6a4176064465e8424196655915ff86316a680
 
 build:
   skip: true  # [python_impl == 'pypy']
-  number: 1
+  number: 0
   script_env:
     - PROPHET_REPACKAGE_CMDSTAN=false
     - PRECOMPILED_HEADERS=false
@@ -29,7 +29,7 @@ requirements:
     - python
     - pip
     - cmdstanpy >=1.0.4
-    - cmdstan ==2.33.1
+    - cmdstan ==2.35.0
     - setuptools >=42
     - wheel >=0.37.0
     - importlib_resources
@@ -38,15 +38,13 @@ requirements:
   run:
     - python
     # Pin the cmdstan version
-    - cmdstan ==2.33.1
+    - cmdstan ==2.35.0
     - cmdstanpy >=1.0.4
     - numpy >=1.15.4
     - matplotlib-base >=2.0.0
     - pandas >=1.0.4
-    - lunarcalendar >=0.0.9
     - convertdate >=2.1.2
-    - holidays >=0.25.0
-    - python-dateutil >=2.8.0
+    - holidays >=0.25.0,<1
     - tqdm >=4.36.1
     - importlib_resources
 
