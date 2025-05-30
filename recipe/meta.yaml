@@ -1,17 +1,17 @@
 {% set name = "prophet" %}
-{% set version = "1.1.6" %}
+{% set version = "1.1.7" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 92238aa584da69abe5c43e9426e6a4176064465e8424196655915ff86316a680
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 97ef633a7d2d3bb7237f58b6990a68467c3c8089f605ea364b03f842ab3ea9cf
 
 build:
   skip: true  # [python_impl == 'pypy']
-  number: 1
+  number: 0
   script_env:
     - PROPHET_REPACKAGE_CMDSTAN=false
     - PRECOMPILED_HEADERS=false
