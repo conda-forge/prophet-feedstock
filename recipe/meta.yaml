@@ -15,6 +15,7 @@ build:
   script_env:
     - PROPHET_REPACKAGE_CMDSTAN=false
     - PRECOMPILED_HEADERS=false
+    - MAKE="make TBB_LIB=$PREFIX/lib/"  # [build_platform != target_platform]
   script: {{ PYTHON }} -m pip install . -vv
   binary_has_prefix_files:
     - {{ SP_DIR|replace("\\", "/") }}/stan_model/prophet_model.bin
@@ -24,6 +25,12 @@ build:
     - bin/cmdstan/src/cmdstan/main.d
 
 requirements:
+  build:
+    - cmdstan ==2.35.0                       # [build_platform != target_platform]
+    - cmdstanpy >=1.0.4                      # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
 
   host:
     - python
