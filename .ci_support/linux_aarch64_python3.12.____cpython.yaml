@@ -16,6 +16,3 @@ target_platform:
 - linux-aarch64
 tbb_devel:
 - '2021'
-zip_keys:
-- - python
-  - channel_sources
