@@ -1,5 +1,5 @@
 {% set name = "prophet" %}
-{% set version = "1.2.0" %}
+{% set version = "1.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b21f2a527ee5cfb71cce8af6c1c322be589540d6348545c165cf729f85bc94c6
+  sha256: 0c06a1de02396b95022aec60178d9348412c2799572b1b13315c6d045106471f
 
 build:
   skip: true  # [python_impl == 'pypy']
