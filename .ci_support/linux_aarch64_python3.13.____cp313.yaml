@@ -15,4 +15,4 @@ python_impl:
 target_platform:
 - linux-aarch64
 tbb_devel:
-- '2021'
+- '2022'
