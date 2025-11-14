@@ -13,4 +13,4 @@ python_impl:
 target_platform:
 - win-64
 tbb_devel:
-- '2021'
+- '2022'
