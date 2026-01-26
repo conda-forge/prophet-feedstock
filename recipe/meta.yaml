@@ -1,5 +1,5 @@
 {% set name = "prophet" %}
-{% set version = "1.2.1" %}
+{% set version = "1.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 0c06a1de02396b95022aec60178d9348412c2799572b1b13315c6d045106471f
+  sha256: f5ea71d610ad4fae813d71904c89a6d2d50c5ebd0cdcdc62578387ab16ec1cdf
 
 build:
   skip: true  # [python_impl == 'pypy']
-  number: 1
+  number: 0
   script_env:
     - PROPHET_REPACKAGE_CMDSTAN=false
     - PRECOMPILED_HEADERS=false
@@ -40,10 +40,9 @@ requirements:
     # Pin the cmdstan version
     - cmdstan ==2.37.0
     - cmdstanpy >=1.0.4
-    - numpy >=1.15.4
+    - numpy >=1.15.4,<2.4.0
     - matplotlib-base >=2.0.0
-    - pandas >=1.0.4
-    - convertdate >=2.1.2
+    - pandas >=1.0.4,<3
     - holidays >=0.25.0,<1
     - tqdm >=4.36.1
     - importlib_resources
