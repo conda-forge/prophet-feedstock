@@ -16,3 +16,6 @@ target_platform:
 - linux-ppc64le
 tbb_devel:
 - '2022'
+zip_keys:
+- - python
+  - channel_sources
