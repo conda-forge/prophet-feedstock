@@ -1,5 +1,5 @@
 channel_sources:
-- conda-forge,conda-forge/label/python_rc
+- conda-forge
 channel_targets:
 - conda-forge main
 docker_image:
@@ -15,7 +15,4 @@ python_impl:
 target_platform:
 - linux-64
 tbb_devel:
-- '2022'
-zip_keys:
-- - python
-  - channel_sources
+- '2023'
